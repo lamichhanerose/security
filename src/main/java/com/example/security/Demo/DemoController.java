@@ -56,6 +56,9 @@ private final CustomerRepository customerRepository;
             return ResponseEntity.notFound().build();
         }
 
+
+
+
         Customer existingCustomer = existingCustomerOptional.get();
         existingCustomer.setFirstName(customer.getFirstName());
         existingCustomer.setLastName(customer.getLastName());
@@ -66,7 +69,4 @@ private final CustomerRepository customerRepository;
         Customer updatedCustomer = customerRepository.save(existingCustomer);
         return ResponseEntity.ok(updatedCustomer);
     }
-
-
-
 }
