@@ -66,6 +66,8 @@ private final CustomerRepository customerRepository;
         existingCustomer.setPassword(customer.getPassword());
         existingCustomer.setRole(customer.getRole());
 
+
+
         Customer updatedCustomer = customerRepository.save(existingCustomer);
         return ResponseEntity.ok(updatedCustomer);
     }
